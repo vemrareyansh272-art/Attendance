@@ -11,7 +11,9 @@
 fetch("https://api.ipify.org?format=json")
 .then(response => response.json())
 .then(data => {
-    const allowedIP = "103.54.27.90";  // IP as a string
+    if(data.ip.startsWith("103.54.27.")){
+   window.location.href="FORM_LINK";
+};  // IP as a string
 
     if(data.ip === allowedIP){  
         window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdweH9IKlS7FNSzfgioZZ5GaStW6dI06STZ-v4XGRMAF8eD2A/viewform?usp=publish-editor";
@@ -32,3 +34,4 @@ fetch("https://api.ipify.org?format=json")
 </body>
 
 </html>
+
