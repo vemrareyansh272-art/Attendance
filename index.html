@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance Access</title>
+</head>
+<body>
+
+<h2>Checking network access...</h2>
+
+<script>
+fetch("https://api.ipify.org?format=json")
+.then(response => response.json())
+.then(data => {
+
+  if(data.ip.startsWith("103.54.27.")){
+      window.location.href="https://forms.gle/3szx65eSguLPEoJV7";
+  } 
+  else{
+      document.body.innerHTML =
+      "<h2>Access denied. Please connect to office WiFi.</h2>";
+  }
+
+})
+.catch(error => {
+  document.body.innerHTML =
+  "<h2>Error fetching IP. Please try again later.</h2>";
+  console.error(error);
+});
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
